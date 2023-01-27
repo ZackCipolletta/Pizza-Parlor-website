@@ -16,3 +16,7 @@ Pizza.prototype.addToppings = function (toppingsString) {
   this.toppings = toppingsString.split(' ');
 }
 
+Pizza.prototype.addPrice = function(price) {
+  this.total += price;
+}
+
