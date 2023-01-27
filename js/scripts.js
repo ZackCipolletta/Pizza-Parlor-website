@@ -35,13 +35,13 @@ function chooseSizeForm(e) {
   const customerPizzaSizeSelectionCost = customerPizzaSizeSelection.id;
   console.log("The customer size seleciton is: " + customerPizzaSizeSelectionValue + " The cost is: $" + customerPizzaSizeSelectionCost);
   const sizeCost = parseInt(customerPizzaSizeSelectionCost)
-  chooseToppingsForm(sizeCost);
+  return sizeCost;
 }
 
 
 
-function chooseToppingsForm(pizzaSize) {
-  // e.preventDefault();
+function chooseToppingsForm() {
+
   const userToppingSelections = document.querySelectorAll("input[name=toppingSelection]:checked");
   const userToppingSelectionsArray = Array.from(userToppingSelections);
   let toppingTotalCost = 0;
@@ -50,13 +50,19 @@ function chooseToppingsForm(pizzaSize) {
     toppingTotalCost += cost;
     console.log(element.value + ' The price is: $' + element.id);
   });
-  let pizaCost = pizzaSize + toppingTotalCost;
+  // let pizaCost = chooseSizeForm() + toppingTotalCost;
   console.log('The total cost of toppings is: $' + toppingTotalCost);
-  console.log('The total cost altogether is: $' + pizaCost);
+  // console.log('The total cost altogether is: $' + pizaCost);
 }
 
 window.addEventListener("load", function () {
-  document.getElementById("wholePieform").addEventListener("submit", chooseSizeForm);
+  document.getElementById("pizzaSizeForm").addEventListener("submit", function(e){
+    chooseSizeForm(e);
+  });
+  document.getElementById("toppingsForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    chooseToppingsForm();
+  });
 });
 
 function uncheck() {
