@@ -12,3 +12,7 @@ Pizza.prototype.addSize = function(size) {
   this.size = size;
 }
 
+Pizza.prototype.addToppings = function (toppingsString) {
+  this.toppings = toppingsString.split(' ');
+}
+
