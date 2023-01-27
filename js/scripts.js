@@ -20,11 +20,6 @@ Pizza.prototype.addPrice = function(price) {
   this.total += price;
 }
 
-
-
-
-
-
 // UI logic
 
 
