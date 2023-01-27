@@ -27,28 +27,29 @@ Pizza.prototype.addMoreToppings = function (moretoppings) {
 
 
 // UI logic
+function chooseToppingsForm(event) {
+  event.preventDefault();
+  const userSelections = document.querySelectorAll("input[name=toppingSelection]:checked");
+  const userSelectionsArray = Array.from(userSelections);
+  userSelectionsArray.forEach(function(element) {
+    console.log(element.value);
 
-
-// Check Whether a Checkbox is Checked
-// Step 1) Add HTML:
-// Example
-// Checkbox: <input type="checkbox" id="myCheck" onclick="myFunction()">
-
-// <p id="text" style="display:none">Checkbox is CHECKED!</p>
-// Step 2) Add JavaScript:
-// Example
-
-function myFunction() {
-  // Get the checkbox
-  var checkBox = document.getElementById("myCheck");
-  if (checkBox.checked == true){
-    text.style.display = "block";
-  } else {
-    text.style.display = "none";
-  }
+    userSelections.forEach(function(element){element.checked = false; // Unchecks any checked radio buttons for toppings upon submit
+    });
+  });
+  // we'll add more code to display results here!
 }
 
+window.addEventListener("load", function() {
+  document.getElementById("wholePieform").addEventListener("submit", chooseToppingsForm);
+});
 
+function uncheck() {
+  ('input[type="checkbox"]'.forEach(function() {
+    this.checked = false;
+  }))
+  // document.getElementById("extraCheese").checked = false;
+}
 
 function smallPizza() {
 myPizza.addSize('small');
@@ -104,3 +105,5 @@ function bacon() {
 myPizza.addToppings('bacon')
 myPizza.addPrice(1);
 }
+
+

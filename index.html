@@ -12,42 +12,45 @@
 <body>
   <h1>Pizza Parlor Website</h1>
   <h5>'Best pizza on State st. on this side of town after 9pm' - Tom</h5>
+  <form id="wholePieform">
 
-  <div id="chooseSizeDiv">
-    <p id="chooseSizeP">Choose your pizza size:</p>
-    <form class="choosePizzaSizeForm" id="choosePizzaSizeRadio">
-      <input type="radio" id="smallPizza" name="choosePizzaSize" value='small' />
+    <div id="chooseSizeDiv">
+      <p id="chooseSizeP">Choose your pizza size:</p>
+      <!-- <form class="choosePizzaSizeForm" id="choosePizzaSizeRadio"> -->
+        <input type="radio" id="smallPizza" name="choosePizzaSize" value='small' />
         <label for="smallPizza">Small (12 inch)</label> <br>
-      <input type="radio" id="mediumPizza" name="choosePizzaSize" value="medium" />
+        <input type="radio" id="mediumPizza" name="choosePizzaSize" value="medium" />
         <label for="mediumPizza">Medium (14 inch)</label> <br>
-      <input type="radio" id="largePizza" name="choosePizzaSize" value="Large" />
-       <label for="largePizza">Large (16 inch)</label>
-    </form>
-  </div>
+        <input type="radio" id="largePizza" name="choosePizzaSize" value="Large" />
+        <label for="largePizza">Large (16 inch)</label>
+      <!-- </form> -->
+    </div>
 
-  <div id="chooseToopingsSelection">
-    <p id="chooseToppingsP">Choose your toppings:</p>
-    <form id="chooseToppingsForm">
-      <input type="checkbox" id="extraCheese">
-      <label for="extraCheese">Extra Cheese</label><br>
-      <input type="checkbox" id="pepperoni">
-      <label for="extraCheese">Pepperoni</label><br>
-      <input type="checkbox" id="artichoke">
-      <label for="extraCheese">Artichoke</label><br>
-      <input type="checkbox" id="anchovy">
-      <label for="extraCheese">Anchovy</label><br>
-      <input type="checkbox" id="mushroom">
-      <label for="extraCheese">Mushroom</label><br>
-      <input type="checkbox" id="sausage">
-      <label for="extraCheese">Sausage</label><br>
-      <input type="checkbox" id="peppers">
-      <label for="extraCheese">Peppers</label><br>
-      <input type="checkbox" id="bacon">
-      <label for="extraCheese">Bacon</label><br>
-    </form>
-  </div>
-  <br>
-  <button type="submit" id="radioButtonSubmit">Submit</button>
+    <div id="chooseToopingsSelection">
+      <p id="chooseToppingsP">Choose your toppings:</p>
+      <!-- <form id="chooseToppingsForm"> -->
+        <input type="checkbox" name="toppingSelection" value="Extra Cheese" id="extraCheese">
+        <label for="extraCheese">Extra Cheese</label><br>
+        <input type="checkbox" name="toppingSelection" value="pepperoni" id="pepperoni">
+        <label for="extraCheese">Pepperoni</label><br>
+        <input type="checkbox" name="toppingSelection" value="artichoke" id="artichoke">
+        <label for="extraCheese">Artichoke</label><br>
+        <input type="checkbox" name="toppingSelection" value="anchovy" id="anchovy">
+        <label for="extraCheese">Anchovy</label><br>
+        <input type="checkbox" name="toppingSelection" value="mushroom" id="mushroom">
+        <label for="extraCheese">Mushroom</label><br>
+        <input type="checkbox" name="toppingSelection" value="sausage" id="sausage">
+        <label for="extraCheese">Sausage</label><br>
+        <input type="checkbox" name="toppingSelection" value="peppers" id="peppers">
+        <label for="extraCheese">Peppers</label><br>
+        <input type="checkbox" name="toppingSelection" value="bacon" id="bacon">
+        <label for="extraCheese">Bacon</label><br>
+        <!-- <button type="submit" id="radioButtonSubmit">Submit</button> -->
+      <!-- </form> -->
+    </div>
+    <br>
+    <button type="submit" id="wholePieSubmitButton">Submit</button>
+  </form>
 
   <div id="currentOrderDiv">
     <p id="currentOrderP">
