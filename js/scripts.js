@@ -31,12 +31,16 @@ function chooseToppingsForm(event) {
   event.preventDefault();
   const userSelections = document.querySelectorAll("input[name=toppingSelection]:checked");
   const userSelectionsArray = Array.from(userSelections);
+  let totalCost = 0;
   userSelectionsArray.forEach(function(element) {
-    console.log(element.value);
+    let cost = parseFloat(element.id);
+    totalCost += cost;
+    console.log(element.value + ' The price is: $' + element.id);
 
     userSelections.forEach(function(element){element.checked = false; // Unchecks any checked radio buttons for toppings upon submit
     });
   });
+  console.log('The total cost of toppings is: ' + totalCost);
   // we'll add more code to display results here!
 }
 
