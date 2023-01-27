@@ -27,25 +27,34 @@ Pizza.prototype.addMoreToppings = function (moretoppings) {
 
 
 // UI logic
-function chooseToppingsForm(event) {
-  event.preventDefault();
-  const userSelections = document.querySelectorAll("input[name=toppingSelection]:checked");
-  const userSelectionsArray = Array.from(userSelections);
-  let totalCost = 0;
-  userSelectionsArray.forEach(function(element) {
-    let cost = parseFloat(element.id);
-    totalCost += cost;
-    console.log(element.value + ' The price is: $' + element.id);
 
-    userSelections.forEach(function(element){element.checked = false; // Unchecks any checked radio buttons for toppings upon submit
+function chooseSizeForm(e) {
+  e.preventDefault();
+  const customerPizzaSizeSelection = document.querySelector("input[name='choosePizzaSize']:checked");
+  const customerPizzaSizeSelectionValue = customerPizzaSizeSelection.value;
+  const customerPizzaSizeSelectionCost = customerPizzaSizeSelection.id;
+    console.log("The customer size seleciton is: " + customerPizzaSizeSelectionValue + " The cost is: " + customerPizzaSizeSelectionCost);
+
+}
+
+
+
+function chooseToppingsForm(e) {
+  e.preventDefault();
+    const userToppingSelections = document.querySelectorAll("input[name=toppingSelection]:checked");
+    const userToppingSelectionsArray = Array.from(userToppingSelections);
+    let totalCost = 0;
+    userToppingSelectionsArray.forEach(function(element) {
+      let cost = parseFloat(element.id);
+      totalCost += cost;
+      console.log(element.value + ' The price is: $' + element.id);
     });
-  });
-  console.log('The total cost of toppings is: ' + totalCost);
-  // we'll add more code to display results here!
+    
+    console.log('The total cost of toppings is: ' + totalCost);
 }
 
 window.addEventListener("load", function() {
-  document.getElementById("wholePieform").addEventListener("submit", chooseToppingsForm);
+  document.getElementById("wholePieform").addEventListener("submit", chooseSizeForm);
 });
 
 function uncheck() {
