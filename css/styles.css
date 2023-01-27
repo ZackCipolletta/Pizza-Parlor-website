@@ -2,3 +2,13 @@ body {
   background-color: black;
   color: white;
 }
+
+.spacer {
+  margin: 10px;
+  margin-left: 50px;
+  width: max-content;
+}
+
+#wholePieform {
+  ;
+}

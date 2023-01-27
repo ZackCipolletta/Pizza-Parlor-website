@@ -11,50 +11,58 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
+<body class="container">
   <h1>Pizza Parlor Website</h1>
   <h5>'Best pizza on State st. on this side of town after 9pm' - Tom</h5>
-  <form id="wholePieform">
+  <div id="wholePieform" class="container pt-5 my-5 border">
 
     <div id="chooseSizeDiv">
-      <p id="chooseSizeP">Choose your pizza size:</p>
-      <input type="radio" id="12" name="choosePizzaSize" value='small' />
-        <label for="smallPizza">Small (12 inch)</label> <br>
-      <input type="radio" id="14" name="choosePizzaSize" value="medium" />
-        <label for="mediumPizza">Medium (14 inch)</label> <br>
-      <input type="radio" id="16" name="choosePizzaSize" value="Large" />
-        <label for="largePizza">Large (16 inch)</label>
+      <form id="pizzaSizeForm">
+        <p id="chooseSizeP">Choose your pizza size:</p>
+        <input type="radio" id="12" name="choosePizzaSize" value='small' />
+          <label for="smallPizza">Small (12 inch)</label> <br>
+        <input type="radio" id="14" name="choosePizzaSize" value="medium" />
+          <label for="mediumPizza">Medium (14 inch)</label> <br>
+        <input type="radio" id="16" name="choosePizzaSize" value="Large" />
+          <label for="largePizza">Large (16 inch)</label>
+        <div class="spacer"></div>
+        <button type="submit" id="pizzaSizeFormButton">Submit</button>
+      </form>
     </div>
     <br>
     <br>
     
     <div id="chooseToopingsSelection">
-      <p id="chooseToppingsP">Choose your toppings:</p>
-      <input type="checkbox" name="toppingSelection" value="Extra Cheese" id="1.25">
-        <label for="extraCheese">Extra Cheese</label><br>
-      <input type="checkbox" name="toppingSelection" value="pepperoni" id="2">
-        <label for="extraCheese">Pepperoni</label><br>
-      <input type="checkbox" name="toppingSelection" value="artichoke" id="1">
-        <label for="extraCheese">Artichoke</label><br>
-      <input type="checkbox" name="toppingSelection" value="anchovy" id="1.5">
-        <label for="extraCheese">Anchovy</label><br>
-      <input type="checkbox" name="toppingSelection" value="mushroom" id="1">
-        <label for="extraCheese">Mushroom</label><br>
-      <input type="checkbox" name="toppingSelection" value="sausage" id="2">
-        <label for="extraCheese">Sausage</label><br>
-      <input type="checkbox" name="toppingSelection" value="peppers" id="1">
-        <label for="extraCheese">Peppers</label><br>
-      <input type="checkbox" name="toppingSelection" value="bacon" id="2.25">
-        <label for="extraCheese">Bacon</label><br>
+      <form id="toppingsForm">
+        <p id="chooseToppingsP">Choose your toppings:</p>
+        <input type="checkbox" name="toppingSelection" value="Extra Cheese" id="1.25">
+          <label for="extraCheese">Extra Cheese</label><br>
+        <input type="checkbox" name="toppingSelection" value="pepperoni" id="2">
+          <label for="extraCheese">Pepperoni</label><br>
+        <input type="checkbox" name="toppingSelection" value="artichoke" id="1">
+          <label for="extraCheese">Artichoke</label><br>
+        <input type="checkbox" name="toppingSelection" value="anchovy" id="1.5">
+          <label for="extraCheese">Anchovy</label><br>
+        <input type="checkbox" name="toppingSelection" value="mushroom" id="1">
+          <label for="extraCheese">Mushroom</label><br>
+        <input type="checkbox" name="toppingSelection" value="sausage" id="2">
+          <label for="extraCheese">Sausage</label><br>
+        <input type="checkbox" name="toppingSelection" value="peppers" id="1">
+          <label for="extraCheese">Peppers</label><br>
+        <input type="checkbox" name="toppingSelection" value="bacon" id="2.25">
+          <label for="extraCheese">Bacon</label><br>
+          <div class="spacer"></div>
+        <button type="submit" id="pizzaToppingsFormButton">Submit</button>
+      </form>
     </div>
     <br>
-    <button type="submit" id="wholePieSubmitButton">Submit</button>
+    <!-- <button type="submit" id="wholePieSubmitButton">Submit</button> -->
   </form>
 
   <div id="currentOrderDiv">
     <p id="currentOrderP">
       Current order:
-    <ul id="sizeUl">size:</ul>
+    <ul id="sizeUl">Size:</ul>
     <ul id="toppingsTitle">toppings:</ul>
     <ul id="toppingsUl">
       <li>toppings 1</li>
