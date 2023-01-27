@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,37 @@
   <title>Document</title>
   <script src="js/scripts.js"></script>
 </head>
+
 <body>
-  
+  <h1>Pizza Parlor Website</h1>
+  <h5>'Best pizza on State st. on this side of town after 9pm' - Tom</h5>
+  <div>
+    <form>
+      <p id="chooseSizeP">Choose your pizza size:</p>
+      <form class="choosePizzaSize" id="radioForm">
+        <label for="smallPizza">Small</label>
+        <input type="radio" id="smallPizza" name="smallPizza" value='small' />
+        <label for="mediumPizza">Medium</label>
+        <input type="radio" id="mediumPizza" name="mediumPizza" value="medium" />
+
+      </form>
+  </div>
+  <div>
+    <p id="chooseToppingsP">Choose your toppings:</p>
+  </div>
+  <button type="submit" id="radioButtonSubmit">Submit</button>
+  </form>
+  <div>
+    <p id="currentOrderP">
+      Current order:
+    <ul id="sizeUl">size:</ul>
+    <ul id="toppingsTitle">toppings:</ul>
+    <ul id="toppingsUl">
+      <li>toppings 1</li>
+    </ul>
+    <span id="orderTotal">Order total:</span>
+    </p>
+  </div>
 </body>
+
 </html>
