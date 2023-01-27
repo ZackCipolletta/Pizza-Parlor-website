@@ -20,6 +20,12 @@ Pizza.prototype.addPrice = function(price) {
   this.total += price;
 }
 
+Pizza.prototype.addMoreToppings = function (moretoppings) {
+  let moreToppingsArr = moretoppings.split(' ')
+  this.toppings = this.toppings.concat(moreToppingsArr);
+}
+
+
 // UI logic
 
 
