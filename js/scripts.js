@@ -8,3 +8,7 @@ function Pizza(size, toppings) {
   this.total = 0;
 }
 
+Pizza.prototype.addSize = function(size) {
+  this.size = size;
+}
+
