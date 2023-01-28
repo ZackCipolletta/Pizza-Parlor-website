@@ -1,7 +1,5 @@
 // Business logic
 
-// let myPizza = new Pizza();
-
 function Pizza(size) {
   this.size = size;
   this.toppings = [];
@@ -20,19 +18,21 @@ Pizza.prototype.addPrice = function (price) {
   this.total += price;
 }
 
-Pizza.prototype.addMoreToppings = function (moretoppings) {
-  let moreToppingsArr = moretoppings.split(' ')
-  this.toppings = this.toppings.concat(moreToppingsArr);
+// UI logic
+
+function chooseSizeForm(e) {
+  e.preventDefault();
+  const customerPizzaSizeSelection = document.querySelector("input[name='choosePizzaSize']:checked").value;
+  startOrder(customerPizzaSizeSelection); // using the size of the pizza ordered call for a new pizza object to be made with the startOrder function.
 }
 
-// UI logic
-function startOrder(orderSize) { 
+function startOrder(orderSize) {
   let customerPizza = new Pizza();// create a new pizza object
   customerPizza.addSize(orderSize); // add the size of the pizza for the order
-  addCostToPizza(customerPizza);
+  addCostOfSize(customerPizza);
 }
 
-function addCostToPizza(custPizza) {
+function addCostOfSize(custPizza) {
   if (custPizza.size === 'Small') { // add the cost of the pizza to the newly created pizza object depending on the size of the pizza being ordered.
     custPizza.addPrice(12)
   } else if (custPizza.size === 'Medium') {
@@ -42,19 +42,19 @@ function addCostToPizza(custPizza) {
   }
   updateOrderTotal(custPizza); // call the updateOrderTotal function passing in the custPizza object
   upddatePageWithSizeSelection(custPizza.size); // call a function to update the size being ordered on the page passsing in the size of the pizza on order.
-  document.getElementById('toppingsForm').removeAttribute('class'); //because the pizza object does not get created until the user hits the submit button on the size selection form, the toppings selection is hidden until a size has been chosen and the object created.
-  document.getElementById("toppingsForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    chooseToppingsForm(custPizza);
-  });
-  console.log(custPizza);
+  checkToppingsForm(custPizza);
+  return  custPizza
 }
 
-function chooseSizeForm(e) {
-  e.preventDefault();
-  const customerPizzaSizeSelection = document.querySelector("input[name='choosePizzaSize']:checked").value;
-  startOrder(customerPizzaSizeSelection); // using the size of the pizza ordered call for a new pizza object to be made with the startOrder function.
-
+function checkToppingsForm(custPizza) {
+  let toppingsForm = document.getElementById('toppingsForm'); ////because the pizza object does not get created until the user hits the submit button on the size selection form, the toppings selection is hidden until a size has been chosen and the object created.
+  if (toppingsForm.hasAttribute('class')) {
+    toppingsForm.removeAttribute('class');
+    document.getElementById('toppingsForm').addEventListener("submit", function (e) {
+      e.preventDefault();
+      chooseToppingsForm(custPizza);
+    });
+  }
 }
 
 function upddatePageWithSizeSelection(selectedSize) {
@@ -65,55 +65,73 @@ function updateOrderTotal(custPizzaTotal) {
   document.getElementById('orderTotal').innerText = custPizzaTotal.total; // update the page with the total cost of the pizza being ordered.
 };
 
-
 function chooseToppingsForm(custPizza) {
-
   const userToppingSelections = document.querySelectorAll("input[name=toppingSelection]:checked"); // get a list of toppings being ordered from the page.
+ custPizza.toppings = [];
   userToppingSelections.forEach(function (element) {
     custPizza.toppings.push(element.value)
   });
-  addToppingsToThePage(custPizza.toppings);
+  addToppingsToThePage(custPizza);
+  totalCostOftoppings(custPizza);
 }
 
-function totalCostOftoppings(toppingsCost){
-  customerPizza = addCost();
-  console.log(toppingsCost);
+function totalCostOftoppings(custPizza) {
+  let toppingsPrice = 0
+  custPizza.toppings.forEach(function (element) {
+  if (element === "Bacon") {
+    toppingsPrice += 2
+  };
+  if (element === "Peppers") {
+    toppingsPrice += 1
+    };
+  if (element === "Sausage") {
+    toppingsPrice += 2
+  };
+  if (element === "Mushroom") {
+    toppingsPrice += 1
+  };
+  if (element === "Anchovy") {
+    toppingsPrice += 1.5
+  };
+  if (element === "Artichoke") {
+    toppingsPrice += 1
+  };
+  if (element === "Pepperoni") {
+    toppingsPrice += 1.5
+  };
+  if (element === "Extra Cheese") {
+    toppingsPrice += 1
+  };
+  })
+  console.log(toppingsPrice);
+  custPizza.total = 0;
+  custPizza.addPrice(toppingsPrice);
+  addCostOfSize(custPizza);
+  // updateOrderTotal(custPizza);
 };
 
-function addToppingsToThePage(toppingsArray){
-  let newLi = document.createElement('li');
-  
-  
-  
-  console.log(toppingsArray)
+function removeListElements() {
+  while(document.getElementById('toppingsUl').hasChildNodes()){
+    document.getElementById('toppingsUl').removeChild(document.getElementById('toppingsUl').firstChild);
+  }  
+}
+function addToppingsToThePage(custPizza) { // Take the array of toppings and add them to the page looping through the array with a forEach loop.
+  if (document.getElementById('toppingsUl').hasChildNodes()){
+    removeListElements();
+  };
+  custPizza.toppings.forEach(function (element) {
+    let list = document.createElement('li');
+    list.append(element);
+    document.getElementById('toppingsUl').append(list);
+  })
+  console.log(custPizza);
 };
-
-
-
-
-
-  
-//   userToppingSelectionsArray.forEach(function (element) {
-//     let cost = parseFloat(element.id);
-//     toppingTotalCost += cost;
-//   });
-//   totalCostOftoppings(toppingTotalCost);
-//   addToppingsFunction(userToppingSelectionsArray);
-// }
-
-
-// userToppingSelectionsArray[2]
-// <input type=​"checkbox" name=​"toppingSelection" value=​"mushroom" id=​"mushroom">​
-// userToppingSelectionsArray[2].value;
-// 'mushroom'
-
-
 
 window.addEventListener("load", function () {
-  document.getElementById("pizzaSizeForm").addEventListener("submit", function(e){
+  document.getElementById("pizzaSizeForm").addEventListener("submit", function (e) {
     chooseSizeForm(e);
   });
-  document.getElementById("currentOrderForm").addEventListener("submit", function(e){
+  document.getElementById("currentOrderForm").addEventListener("submit", function (e) {
     e.preventDefault();
   });
 });
@@ -123,60 +141,3 @@ function uncheck() {
     this.checked = false;
   }))
 }
-
-function smallPizza() {
-  myPizza.addSize('small');
-  myPizza.addPrice(12);
-}
-
-function mediumPizza() {
-  myPizza.addSize('medium');
-  myPizza.addPrice(14);
-}
-
-function largePizza() {
-  myPizza.addSize('large');
-  myPizza.addPrice(16);
-}
-
-function extraCheese() {
-  myPizza.addToppings('Extra cheese')
-  myPizza.addPrice(.50);
-}
-
-function pepperoni() {
-  myPizza.addToppings('pepperoni')
-  myPizza.addPrice(1);
-}
-
-function artichoke() {
-  myPizza.addToppings('artichoke')
-  myPizza.addPrice(.50);
-}
-
-function anchovy() {
-  myPizza.addToppings('anchovy')
-  myPizza.addPrice(1);
-}
-
-function mushroom() {
-  myPizza.addToppings('mushroom')
-  myPizza.addPrice(.50);
-}
-
-function sausage() {
-  myPizza.addToppings('sausage')
-  myPizza.addPrice(1);
-}
-
-function peppers() {
-  myPizza.addToppings('peppers')
-  myPizza.addPrice(.50);
-}
-
-function bacon() {
-  myPizza.addToppings('bacon')
-  myPizza.addPrice(1);
-}
-
-
