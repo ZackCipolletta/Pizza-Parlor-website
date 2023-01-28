@@ -9,6 +9,6 @@ body {
   width: max-content;
 }
 
-#wholePieform {
-  ;
+.hidden {
+  display: none;
 }
