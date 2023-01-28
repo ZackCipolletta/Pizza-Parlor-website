@@ -28,20 +28,39 @@ Pizza.prototype.addMoreToppings = function (moretoppings) {
 
 // UI logic
 
-function chooseSizeForm(e) {
-  e.preventDefault();
-  const customerPizzaSizeSelection = document.querySelector("input[name='choosePizzaSize']:checked");
-  const customerPizzaSizeSelectionValue = customerPizzaSizeSelection.value;
-  const customerPizzaSizeSelectionCost = customerPizzaSizeSelection.id;
-  console.log("The customer size seleciton is: " + customerPizzaSizeSelectionValue + " The cost is: $" + customerPizzaSizeSelectionCost);
-  const sizeCost = parseInt(customerPizzaSizeSelectionCost)
-  return sizeCost;
+function activateForms(e) {
+
 }
 
 
+function chooseSizeForm(e) {
+  e.preventDefault();
+  const customerPizzaSizeSelection = document.querySelector("input[name='choosePizzaSize']:checked");
+  const customerPizzaSizeSelectionCost = customerPizzaSizeSelection.id; // the cost of the size is held in the id of the input (maybe I'm cheating a bit.)
+  pizzaSizeSelection(customerPizzaSizeSelectionCost); // call pizzaSizeSelection function and pass in the value of the cost of the selected size.
+}
+
+// function beginOrder(){
+
+//   let pizzaSize = ;
+//   chooseSizeForm();
+//   chooseToppingsForm();
+// };
+
+
+function pizzaSizeSelection(costOfSize){ // Take the value of the selected size (from chooseSizeForm function)and print to console
+  console.log(parseInt(costOfSize));
+};
+
+function totalCostOftoppings(toppingsCost){ // Take the value of the selected toppings (from chooseToppingsForm function) and print to console
+  console.log(toppingsCost);
+};
+
+function orderTotal(){
+
+}
 
 function chooseToppingsForm() {
-
   const userToppingSelections = document.querySelectorAll("input[name=toppingSelection]:checked");
   const userToppingSelectionsArray = Array.from(userToppingSelections);
   let toppingTotalCost = 0;
@@ -50,9 +69,7 @@ function chooseToppingsForm() {
     toppingTotalCost += cost;
     console.log(element.value + ' The price is: $' + element.id);
   });
-  // let pizaCost = chooseSizeForm() + toppingTotalCost;
-  console.log('The total cost of toppings is: $' + toppingTotalCost);
-  // console.log('The total cost altogether is: $' + pizaCost);
+  totalCostOftoppings(toppingTotalCost) // call totalCostOftoppings function and pass in the value of the cost of the selected toppings.
 }
 
 window.addEventListener("load", function () {
@@ -63,13 +80,16 @@ window.addEventListener("load", function () {
     e.preventDefault();
     chooseToppingsForm();
   });
+  document.getElementById("currentOrderForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    orderTotal();
+  });
 });
 
 function uncheck() {
   ('input[type="checkbox"]'.forEach(function () {
     this.checked = false;
   }))
-  // document.getElementById("extraCheese").checked = false;
 }
 
 function smallPizza() {
