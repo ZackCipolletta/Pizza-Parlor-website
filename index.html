@@ -12,64 +12,67 @@
 </head>
 
 <body class="container-lg">
-  <h1>Pizza Parlor Website</h1>
-  <h5 img>'Best pizza on State st. on this side of town after 9pm' - Tom</h5>
-  <div id="wholePieform" class="container pt-2 my-5 border">
-
-    <div id="chooseSizeDiv">
-      <form id="pizzaSizeForm">
-        <p id="chooseSizeP">Choose your pizza size:</p>
-        <input type="radio" id="12" name="choosePizzaSize" value='Small' />
-          <label for="smallPizza">Small (12 inch)</label> <br>
-        <input type="radio" id="14" name="choosePizzaSize" value="Medium" />
-          <label for="mediumPizza">Medium (14 inch)</label> <br>
-        <input type="radio" id="16" name="choosePizzaSize" value="Large" />
-          <label for="largePizza">Large (16 inch)</label>
-        <div class="spacer"></div>
-        <button type="submit" id="pizzaSizeFormButton">Submit</button>
-      </form>
+  <div class="layer">
+    <div id="headerDiv" class="container my-5 border">
+      <h1><span>"Pizza" Parlor</span></h1>
+      <h5><span>'Best pizza on State st. on this side of town after 9pm'<br> - Tom</span></h5>
     </div>
-    <br>
-    <br>
-    
-    <div id="chooseToopingsSelection" >
-      <form id="toppingsForm"  class="hidden">
-        <p id="chooseToppingsP">Choose your toppings:</p>
-        <input type="checkbox" name="toppingSelection" value="Extra-Cheese" id="1">
-          <label for="extraCheese">Extra-Cheese</label><br>
-        <input type="checkbox" name="toppingSelection" value="Pepperoni" id="1.5">
-          <label for="extraCheese">Pepperoni</label><br>
-        <input type="checkbox" name="toppingSelection" value="Artichoke" id="1">
-          <label for="extraCheese">Artichoke</label><br>
-        <input type="checkbox" name="toppingSelection" value="Anchovy" id="1.5">
-          <label for="extraCheese">Anchovy</label><br>
-        <input type="checkbox" name="toppingSelection" value="Mushroom" id="1">
-          <label for="extraCheese">Mushroom</label><br>
-        <input type="checkbox" name="toppingSelection" value="Sausage" id="2">
-          <label for="extraCheese">Sausage</label><br>
-        <input type="checkbox" name="toppingSelection" value="Peppers" id="1">
-          <label for="extraCheese">Peppers</label><br>
-        <input type="checkbox" name="toppingSelection" value="Bacon" id="2">
-          <label for="extraCheese">Bacon</label><br>
+    <div id="wholePieform" class="container pt-2 my-5 border">
+
+      <div id="chooseSizeDiv">
+        <form id="pizzaSizeForm">
+          <p id="chooseSizeP">Choose your pizza size:</p>
+          <input type="radio" id="12" name="choosePizzaSize" value='Small' />
+            <label for="smallPizza">Small (12 inch)</label> <br>
+          <input type="radio" id="14" name="choosePizzaSize" value="Medium" />
+            <label for="mediumPizza">Medium (14 inch)</label> <br>
+          <input type="radio" id="16" name="choosePizzaSize" value="Large" />
+            <label for="largePizza">Large (16 inch)</label>
           <div class="spacer"></div>
-        <button type="submit" id="pizzaToppingsFormButton">Submit</button>
+          <button type="submit" id="pizzaSizeFormButton">Submit</button>
+        </form>
+      </div>
+      <br>
+      <br>
+      
+      <div id="chooseToopingsSelection" >
+        <form id="toppingsForm"  class="hidden">
+          <p id="chooseToppingsP">Choose your toppings:</p>
+          <input type="checkbox" name="toppingSelection" value="Extra-Cheese" id="1">
+            <label for="extraCheese">Extra-Cheese</label><br>
+          <input type="checkbox" name="toppingSelection" value="Pepperoni" id="1.5">
+            <label for="extraCheese">Pepperoni</label><br>
+          <input type="checkbox" name="toppingSelection" value="Artichoke" id="1">
+            <label for="extraCheese">Artichoke</label><br>
+          <input type="checkbox" name="toppingSelection" value="Anchovy" id="1.5">
+            <label for="extraCheese">Anchovy</label><br>
+          <input type="checkbox" name="toppingSelection" value="Mushroom" id="1">
+            <label for="extraCheese">Mushroom</label><br>
+          <input type="checkbox" name="toppingSelection" value="Sausage" id="2">
+            <label for="extraCheese">Sausage</label><br>
+          <input type="checkbox" name="toppingSelection" value="Peppers" id="1">
+            <label for="extraCheese">Peppers</label><br>
+          <input type="checkbox" name="toppingSelection" value="Bacon" id="2">
+            <label for="extraCheese">Bacon</label><br>
+            <div class="spacer"></div>
+          <button type="submit" id="pizzaToppingsFormButton">Submit</button>
+        </form>
+      </div>
+      <br>
+    </form>
+    <div id="currentOrderDiv">
+      <form id="currentOrderForm">
+        <p id="currentOrderP">
+          Current order:
+        <ul id="sizeUl">Size:</ul>
+        <ul id="toppingsTitle">Toppings:</ul>
+        <ul id="toppingsUl">
+        </ul>
+        <span>Order total: $</span><span id="orderTotal">0</span>
+        </p>
       </form>
     </div>
-    <br>
-  </form>
-  <div id="currentOrderDiv">
-    <form id="currentOrderForm">
-      <p id="currentOrderP">
-        Current order:
-      <ul id="sizeUl">Size:</ul>
-      <ul id="toppingsTitle">Toppings:</ul>
-      <ul id="toppingsUl">
-      </ul>
-      <span>Order total: $</span><span id="orderTotal">0</span>
-      </p>
-    </form>
   </div>
-
 </body>
 
 </html>

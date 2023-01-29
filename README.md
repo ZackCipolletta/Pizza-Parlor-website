@@ -14,7 +14,7 @@ An application demonstrating knowledge of objects, arrays, loops and branching u
 
 This is a website for a Pizza Parlor where users can order and customize their pizza.  Users can select from different sizese and toppings and see a total based on their seleciton.  Hitting the submit button unde the size seleciton area creates a new pizza object containing the values of the selected size, an array of toppings and the total price based on those selections.
 
-Each time the user hits the submit button the page will be updated with their selected customized order.
+Each time the user hits the submit button the page will be updated with their selected customized order. The page will display the size and toppings selected as well as the total price for the order.
 
 
 ## Setup/Installation Requirements

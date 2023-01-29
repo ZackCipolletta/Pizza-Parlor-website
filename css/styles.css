@@ -1,11 +1,19 @@
 body {
-  background-color: black;
   color: white;
-  /* background-image: url("/Images/Pizza_Parlor_July_2018.webp"); */
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
-  background-size: 65%;
+  background: url("/Images/vertical-view-delicious-pizza.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.layer {
+  background-color: rgba(0, 0, 0, 0.233);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .spacer {
@@ -16,4 +24,30 @@ body {
 
 .hidden {
   display: none;
+}
+
+#headerDiv {
+  text-align: center;
+  /* background-image: url(/Images/Pizza-Banner.jpg); */
+  width: fill;
+  /* color: rgb(0, 0, 0); */
+  
+  background-size: fit;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(39, 1, 1, 0.342);
+}
+
+h1 span { 
+  background-color: rgba(0, 2, 0, 0.397); 
+}
+
+h5 span { 
+  background-color: rgba(0, 2, 0, 0.397); 
+}
+
+#wholePieform {
+  background-color: rgba(0, 0, 0, 0.247);
+  text-shadow: 3px 3px 4px black;
+  font-weight: 500;
 }
