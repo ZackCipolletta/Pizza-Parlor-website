@@ -1,6 +1,11 @@
 body {
   background-color: black;
   color: white;
+  /* background-image: url("/Images/Pizza_Parlor_July_2018.webp"); */
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: 65%;
 }
 
 .spacer {
