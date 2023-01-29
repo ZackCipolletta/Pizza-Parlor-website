@@ -1,4 +1,4 @@
-# programming-language-suggester
+# Pizza-Parlor-Website
 An application demonstrating knowledge of objects, arrays, loops and branching utilizing user input.
 
 #### By Zachary Cipolletta
@@ -25,7 +25,9 @@ Each time the user hits the submit button the page will be updated with their se
 
 ## Known Bugs
 
- * No known bugs at this time.
+ * The toppings attribute is an array containing a list of toppings for the pizza object and the form to select toppings returns an array.  However, the .addtoppings(). takes a string and turns it into an array which is then added to the pizza object.  I was not able to figure out how to create a method that would be able to directly take an array or list of elements from an array and add it directly that way.  
+ 
+ My solution was to convert the array to a string.  The object is now able to use a method which will take the string as an argument and convert it back to an array to be added to the toppings property.
  
 
 ## License
