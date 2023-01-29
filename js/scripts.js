@@ -22,7 +22,6 @@ Pizza.prototype.addPrice = function (price) {
 
 function chooseSizeForm(e) {
   e.preventDefault();
-  uncheckBoxes();
   startOrder();
  // using the size of the pizza ordered call for a new pizza object to be made with the startOrder function.
 }
@@ -36,13 +35,6 @@ function addSize(customerPizza) {
   const customerPizzaSizeSelection = document.querySelector("input[name='choosePizzaSize']:checked").value;
   customerPizza.addSize(customerPizzaSizeSelection);
   addCostOfSize(customerPizza);
-}
-
-function uncheckBoxes() { // resets all checkboxes 
-  const checkBoxes = document.getElementsByName('toppingSelection');
-  checkBoxes.forEach(function (element) {
-    element.checked = false;
-  });
 }
 
 function addCostOfSize(custPizza) {
@@ -66,6 +58,7 @@ function checkToppingsForm(custPizza) {
     document.getElementById('toppingsForm').addEventListener("submit", function (e) {
       e.preventDefault();
       chooseToppingsForm(custPizza);
+      document.getElementById('pizzaSizeFormButton').setAttribute('class', 'hidden'); // once the submit button on the toppings form is hit, hide the submit button on the select size form.
     });
   }
 }

@@ -1,4 +1,37 @@
+# programming-language-suggester
+An application demonstrating knowledge of objects, arrays, loops and branching utilizing user input.
 
+#### By Zachary Cipolletta
+
+
+## Technologies used
+
+* JavaScript
+* HTML
+* CSS
+
+## Description
+
+This is a website for a Pizza Parlor where users can order and customize their pizza.  Users can select from different sizese and toppings and see a total based on their seleciton.  Hitting the submit button unde the size seleciton area creates a new pizza object containing the values of the selected size, an array of toppings and the total price based on those selections.
+
+Each time the user hits the submit button the page will be updated with their selected customized order.
+
+
+## Setup/Installation Requirements
+
+* Clone repository to your desktop
+* Navigate to the top level of the directory
+* Open index.html in your browser.
+
+## Known Bugs
+
+ * No known bugs at this time.
+ 
+
+## License
+MIT
+
+Copyright (c) 1/29/2023 Zachary Cipolletta
 
 ## Describe Pizza()
 
@@ -18,15 +51,4 @@ Test: "It should take a value for price and add it to the existing price."
 Code: myPizza.addPrice(15);
 Expected Output: "myPizza{size; , toppings: [], price: 15"}
 
-Test: 
-Code: 
-Expected Output: " "
-
-Test: 
-Code: 
-Expected Output: " "
-
-Test: 
-Code: 
-Expected Output: " "
 
