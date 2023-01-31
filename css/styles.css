@@ -38,7 +38,7 @@ body {
   background-color: rgba(39, 1, 1, 0.342);
 }
 
-h1 span { +
+h1 span {
   background-color: rgba(0, 2, 0, 0.397); 
 }
 
@@ -47,7 +47,18 @@ h5 span {
 }
 
 #wholePieform {
+  position: relative;
   background-color: rgba(0, 0, 0, 0.247);
   text-shadow: 3px 3px 4px black;
   font-weight: 500;
+}
+
+#currentOrderDiv {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-right: 1em;
+  transform: translateY(-50%);
+  border-style: solid;
+  border-width: thin;
 }
