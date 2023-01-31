@@ -61,4 +61,10 @@ h5 span {
   transform: translateY(-50%);
   border-style: solid;
   border-width: thin;
+  padding: 10px 7px 5px;
+}
+
+#insideCurrentOrder {
+
+margin-left: -25px;
 }
